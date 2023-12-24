@@ -6,7 +6,7 @@ echo "\n##### BUILDING DOCKER IMAGE #####"
   echo "\n##### RUNNING CONTAINER #####"
   docker ps | grep -q $1
   if [ $? -eq 1 ]; then
-    docker run -d --name $1 -p 8080:80 $1
+    docker run --detach --rm --name $1 -p 8080:80 $1
     sleep 1
   fi
 

@@ -5,7 +5,7 @@ if [ $# -eq 1 ]; then
   echo "\n##### RUNNING CONTAINER #####"
   docker ps | grep -q $1
   if [ $? -eq 1 ]; then
-    docker run --detach --name $1 -p 5000:5000 $1
+    docker run --detach --rm --name $1 -p 5000:5000 $1
     sleep 1
   fi
 
